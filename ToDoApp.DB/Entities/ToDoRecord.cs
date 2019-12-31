@@ -9,7 +9,7 @@ namespace ToDoApp.DB.Entities
         public string Title { get; set; }
         public DateTime DueTo { get; set; }
         public Priority Priority { get; set; }
-        public long UserId { get; set; }
+        public long OwningUserId { get; set; }
         public User OwningUser { get; set; }
     }
 

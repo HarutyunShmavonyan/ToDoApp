@@ -1,4 +1,6 @@
-﻿namespace ToDoApp.DB.Entities
+﻿using System;
+
+namespace ToDoApp.DB.Entities
 {
     public abstract class Entity
     {
