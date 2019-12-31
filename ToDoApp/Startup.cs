@@ -20,7 +20,7 @@ namespace ToDoApp.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ToDoAppDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
+                options.UseSqlServer(Configuration.GetConnectionString("Relational")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
