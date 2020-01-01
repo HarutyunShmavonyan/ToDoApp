@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ToDoApp.DB;
+using ToDoApp.WebApi.Extensions;
 
 namespace ToDoApp.WebApi
 {
@@ -21,6 +22,9 @@ namespace ToDoApp.WebApi
         {
             services.AddDbContext<ToDoAppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Relational")));
+
+            services.AddRepositories();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

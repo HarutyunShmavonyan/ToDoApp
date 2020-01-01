@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ToDoApp.DB.Entities
+﻿namespace ToDoApp.Common.DAL.Abstract
 {
     public abstract class Entity
     {

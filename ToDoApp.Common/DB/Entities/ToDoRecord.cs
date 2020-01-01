@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoApp.Common.DAL.Abstract;
 
 namespace ToDoApp.DB.Entities
 {

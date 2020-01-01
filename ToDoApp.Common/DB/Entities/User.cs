@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ToDoApp.Common.DAL.Abstract;
 
 namespace ToDoApp.DB.Entities
 {

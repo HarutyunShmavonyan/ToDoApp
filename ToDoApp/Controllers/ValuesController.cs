@@ -1,5 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ToDoApp.Common;
+using ToDoApp.Common.DAL.Abstract;
+using ToDoApp.DAL;
+using ToDoApp.DB.Entities;
 
 namespace ToDoApp.WebApi.Controllers
 {
@@ -7,10 +12,22 @@ namespace ToDoApp.WebApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IRepository<User> _repo;
+
+        public ValuesController(IRepository<User> repo)
+        {
+            _repo = repo;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult<IEnumerable<string>>> Get()
         {
+            var filter = new Filter<User>();
+            filter.Condition(u => u.Id < 2);
+
+            var a = await _repo.GetAsync(filter);
+
             return new string[] { "value1", "value2" };
         }
 

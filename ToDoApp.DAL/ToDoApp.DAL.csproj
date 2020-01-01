@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoApp.Common\ToDoApp.Common.csproj" />
+    <ProjectReference Include="..\ToDoApp.DB\ToDoApp.DB.csproj" />
+  </ItemGroup>
+
+</Project>
