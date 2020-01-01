@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ToDoApp.Common;
-using ToDoApp.Common.DAL.Abstract;
+using ToDoApp.Common.DB.Entities;
+using ToDoApp.Common.Infrastructure;
 using ToDoApp.Common.SL.Abstract;
-using ToDoApp.DAL;
-using ToDoApp.DB.Entities;
 
 namespace ToDoApp.WebApi.Controllers
 {
@@ -27,14 +25,14 @@ namespace ToDoApp.WebApi.Controllers
             var filter = new Filter<User>();
             filter.Condition(u => u.Id < 2);
 
-            var a = await _userService.AddUserAsync(new User
+            await _userService.AddUserAsync(new User
             {
-                FirstName = "asdasdasd",
+                FirstName = "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
                 Email = "asdasdasd",
                 SecondName = "asdasd"
             });
 
-            return new string[] { "value1", "value2" };
+            return new[] { "value1", "value2" };
         }
 
         // GET api/values/5

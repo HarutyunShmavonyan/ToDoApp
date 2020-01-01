@@ -1,23 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using ToDoApp.Common.DAL.Abstract;
 using ToDoApp.Common.SL.Abstract;
-using ToDoApp.DAL;
-using ToDoApp.DB.Entities;
 using ToDoApp.Services;
+using ToDoApp.Services.ValidationProxies;
 
 namespace ToDoApp.WebApi.Extensions
 {
     public static class Services
     {
-        public static void AddServices(this IServiceCollection services)
+        public static IServiceProvider AddServices(this IServiceCollection services)
         {
+            services.AddOptions();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
             services.AddScoped<IUserService, UserService>();
+
+            var builder = new ContainerBuilder();
+            builder.Populate(services);
+
+            builder.RegisterDecorator<UserServiceValidationProxy, IUserService>();
+            var container = builder.Build();
+
+            return new AutofacServiceProvider(container);
         }
     }
 }

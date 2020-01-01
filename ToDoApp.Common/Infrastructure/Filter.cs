@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace ToDoApp.DAL
+namespace ToDoApp.Common.Infrastructure
 {
     public class Filter<TEntity>
     {

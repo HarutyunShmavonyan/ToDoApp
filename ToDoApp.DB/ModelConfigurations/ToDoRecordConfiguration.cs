@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ToDoApp.DB.Entities;
+using ToDoApp.Common.DB.Entities;
 
 namespace ToDoApp.DB.ModelConfigurations
 {

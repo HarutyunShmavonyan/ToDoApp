@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
-using ToDoApp.DAL;
+using ToDoApp.Common.Infrastructure;
 
 namespace ToDoApp.Common.DAL.Abstract
 {

@@ -1,4 +1,4 @@
-﻿using ToDoApp.DB.Entities;
+﻿using ToDoApp.Common.DB.Entities;
 
 namespace ToDoApp.Common.DAL.Abstract
 {

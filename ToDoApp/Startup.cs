@@ -1,4 +1,5 @@
-﻿using FluentValidation.AspNetCore;
+﻿using System;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -19,17 +20,19 @@ namespace ToDoApp.WebApi
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ToDoAppDbContext>(options =>
+            services.AddDbContextPool<ToDoAppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Relational")));
 
             services.AddRepositories();
-            services.AddServices();
+            services.AddValidationConfigurations();
 
             services.AddMvc()
                 .AddFluentValidation()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            return services.AddServices();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

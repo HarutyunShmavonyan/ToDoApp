@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ToDoApp.Common.DAL.Abstract;
 
-namespace ToDoApp.DB.Entities
+namespace ToDoApp.Common.DB.Entities
 {
     public class User : Entity
     {

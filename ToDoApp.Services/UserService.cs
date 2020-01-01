@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using ToDoApp.Common.DAL.Abstract;
+using ToDoApp.Common.DB.Entities;
 using ToDoApp.Common.SL.Abstract;
-using ToDoApp.DB.Entities;
 
 [assembly: InternalsVisibleTo("ToDoApp.WebApi")]
+
 namespace ToDoApp.Services
 {
     internal class UserService : IUserService

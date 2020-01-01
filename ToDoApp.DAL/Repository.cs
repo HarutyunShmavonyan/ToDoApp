@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using ToDoApp.Common;
 using ToDoApp.Common.DAL.Abstract;
+using ToDoApp.Common.Infrastructure;
 using ToDoApp.DB;
-using ToDoApp.DB.Entities;
 
 namespace ToDoApp.DAL
 {

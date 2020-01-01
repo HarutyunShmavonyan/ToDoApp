@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using ToDoApp.DB.Entities;
+using ToDoApp.Common.DB.Entities;
 
 namespace ToDoApp.Common.SL.Abstract
 {

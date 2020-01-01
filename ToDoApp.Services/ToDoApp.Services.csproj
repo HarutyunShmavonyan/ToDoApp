@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="PostSharp" Version="6.4.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ToDoApp.Common\ToDoApp.Common.csproj" />
     <ProjectReference Include="..\ToDoApp.DB\ToDoApp.DB.csproj" />
   </ItemGroup>
