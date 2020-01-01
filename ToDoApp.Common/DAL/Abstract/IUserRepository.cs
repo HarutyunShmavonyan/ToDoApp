@@ -1,6 +1,8 @@
-﻿namespace ToDoApp.Common.DAL.Abstract
+﻿using ToDoApp.DB.Entities;
+
+namespace ToDoApp.Common.DAL.Abstract
 {
-    public interface IUserRepository
+    public interface IUserRepository: IRepository<User>
     {
     }
 }

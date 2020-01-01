@@ -14,6 +14,8 @@ namespace ToDoApp.WebApi.Extensions
         public static void AddRepositories(this IServiceCollection services)
         {
             services.AddScoped(typeof(IRepository<User>), typeof(Repository<User>));
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IToDoRecordRepository, ToDoRecordRepository>();
         }
     }
 }
