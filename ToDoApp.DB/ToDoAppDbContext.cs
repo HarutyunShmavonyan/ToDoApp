@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using ToDoApp.DB.Entities;
+using ToDoApp.Common.DB.Entities;
 using ToDoApp.DB.ModelConfigurations;
 
 namespace ToDoApp.DB

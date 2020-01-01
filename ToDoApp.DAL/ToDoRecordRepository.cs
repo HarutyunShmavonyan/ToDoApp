@@ -1,6 +1,6 @@
 ﻿using ToDoApp.Common.DAL.Abstract;
+using ToDoApp.Common.DB.Entities;
 using ToDoApp.DB;
-using ToDoApp.DB.Entities;
 
 namespace ToDoApp.DAL
 {

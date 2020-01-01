@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ToDoApp.Common;
-using ToDoApp.Common.DAL.Abstract;
-using ToDoApp.DAL;
-using ToDoApp.DB.Entities;
+using ToDoApp.Common.DB.Entities;
+using ToDoApp.Common.Infrastructure;
+using ToDoApp.Common.SL.Abstract;
 
 namespace ToDoApp.WebApi.Controllers
 {
@@ -12,11 +11,11 @@ namespace ToDoApp.WebApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly IRepository<User> _repo;
+        private readonly IUserService _userService;
 
-        public ValuesController(IRepository<User> repo)
+        public ValuesController(IUserService userService)
         {
-            _repo = repo;
+            _userService = userService;
         }
 
         // GET api/values
@@ -26,9 +25,14 @@ namespace ToDoApp.WebApi.Controllers
             var filter = new Filter<User>();
             filter.Condition(u => u.Id < 2);
 
-            var a = await _repo.GetAsync(filter);
+            await _userService.AddUserAsync(new User
+            {
+                FirstName = "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
+                Email = "asdasdasd",
+                SecondName = "asdasd"
+            });
 
-            return new string[] { "value1", "value2" };
+            return new[] { "value1", "value2" };
         }
 
         // GET api/values/5
